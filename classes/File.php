@@ -8,12 +8,26 @@ class File
 
   function checkFile() {
     // Проверка есть ли файлы в папке
+    $files = glob("img/*.*");
+    if (empty($files)) {
+      echo "Пусто";
+    } else {
+      echo $this->arrFile($files);
+    }
+
   }
 
-  public function arrFile() {
+  public function arrFile($files) {
     // Если файлы в папке существуют, то добавление их в массив
+    $i = 0;
+    foreach ($files as $file) {
+      echo "<a href='{$file}'>$file</a><br/>"; //del
+      $name = $this->getNameFile($file);
 
-    return $arr;
+      $arr[$i] = $name;
+      $i++;
+    }
+    var_dump($arr);
   }
 
   public function addFile() {
@@ -22,6 +36,15 @@ class File
 
   public function changeNameFile() {
     // Изменение имени файла
+ 
+  }
+
+  public function getNameFile($file) {
+    // Получение имени файла и сохранение его в массив
+    $name = pathinfo($file);
+    $name = basename($file, '.' . $name['extension']);
+    echo "$name<br/>"; //del
+    return $name;
   }
 
   /* function ArrFile() {

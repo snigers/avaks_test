@@ -14,6 +14,8 @@ class DB
     $DB = @mysqli_connect('localhost', 'root', '', 'avaks') or die('Ошибка соединения с БД');
     if (!$DB) die(mysqli_connect_error());
 
+    mysqli_set_charset($DB, "utf8") or die('Не установленна кодировка');
+
     $res = mysqli_query($DB, "SELECT id, name, text, date FROM avaksTest ORDER BY id DESC");
     // echo mysqli_num_rows($res);
 
@@ -34,13 +36,16 @@ class DB
 
   function addNameFile($arr) {
     //Если файлов нет в БД, то добавить массив файлов
+    foreach ($arr as $filename) {
+
+    }
   }
 
   function addNewFileArr($filename) {
     //Если в массиве файлы есть, но не все, то тут по одному добавляются в конец массива
     // Либо добавление новых файлов
 
-    return 
+    return '';
   }
 
   public function chengeNameFile($str) {

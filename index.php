@@ -2,6 +2,7 @@
 
 // namespace classes;
 use \classes\DB;
+use \classes\File;
 
 error_reporting(-1);
 
@@ -27,7 +28,8 @@ function autoloder($class) {
 <body>
   <?php
   
-    
+    $file = new File;
+    $file->checkFile();
     $date = new DB;
     var_dump($date);
   ?>
