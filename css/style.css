@@ -1,0 +1,11 @@
+header .infoheader 
+{
+  background-color: aqua;
+  height: 100px;
+}
+
+footer .infofooter 
+{
+  background-color: rgba(0, 255, 55, 0.911);
+  height: 100px;
+}

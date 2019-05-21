@@ -22,7 +22,7 @@ class DB
     if ($res) {
       $data = mysqli_fetch_all($res, MYSQLI_ASSOC);
     } else {
-      echo "В БД нет данных";
+      // echo "В БД нет данных";
     }
     
   }
@@ -34,10 +34,13 @@ class DB
     return $res;
   }
 
-  function addNameFile($arr) {
+  function addFullFile() {
     //Если файлов нет в БД, то добавить массив файлов
-    foreach ($arr as $filename) {
-
+    $fileClass = new File;
+    $files = $fileClass->getArrFileFolder();
+    foreach ($files as $file) {
+      $name = $fileClass->getNameFile($file);
+      
     }
   }
 

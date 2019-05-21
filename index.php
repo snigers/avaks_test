@@ -23,15 +23,36 @@ function autoloder($class) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/style.css">
   <title>Document</title>
 </head>
 <body>
-  <?php
-  
-    $file = new File;
-    $file->checkFile();
-    $date = new DB;
-    var_dump($date);
-  ?>
+  <header>
+    <div class="infoheader">
+
+    </div>
+  </header>
+
+  <main>
+    <?php
+    
+      $file = new File;
+      $file->checkFile();
+      $date = new DB;
+      // var_dump($date);
+      // $lastname = "B001BR5012 черный1";
+      // $newname = "123";
+      // $file->changeNameFile($lastname, $newname);
+      $file->viewSizeFile();
+
+    ?>
+  </main>
+
+  <footer>
+    <div class="infofooter">
+
+    </div>
+  </footer>
+
 </body>
 </html>
